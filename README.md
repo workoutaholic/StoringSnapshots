@@ -1,0 +1,1 @@
+Taking snapshots and storing them securely on a device.
