@@ -17,6 +17,7 @@
 		7C3A6D1C1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D1A1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift */; };
 		7C3A6D1F1F63445800115225 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D1E1F63445800115225 /* CoreDataHelper.swift */; };
 		7C3A6D221F6344AC00115225 /* AuthSecurityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D211F6344AC00115225 /* AuthSecurityImage.swift */; };
+		7C3A6D241F63519100115225 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D231F63519100115225 /* CameraManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7C3A6D1A1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AuthSecurityImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7C3A6D1E1F63445800115225 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		7C3A6D211F6344AC00115225 /* AuthSecurityImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthSecurityImage.swift; sourceTree = "<group>"; };
+		7C3A6D231F63519100115225 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				7C3A6D1E1F63445800115225 /* CoreDataHelper.swift */,
+				7C3A6D231F63519100115225 /* CameraManager.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				7C3A6D021F63214600115225 /* AppDelegate.swift in Sources */,
 				7C3A6D181F633B6900115225 /* Buttons.swift in Sources */,
 				7C3A6D1B1F63442900115225 /* AuthSecurityImage+CoreDataClass.swift in Sources */,
+				7C3A6D241F63519100115225 /* CameraManager.swift in Sources */,
 				7C3A6D221F6344AC00115225 /* AuthSecurityImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
