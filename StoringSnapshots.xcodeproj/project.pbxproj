@@ -13,6 +13,10 @@
 		7C3A6D0C1F63214600115225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3A6D0B1F63214600115225 /* Assets.xcassets */; };
 		7C3A6D0F1F63214600115225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3A6D0D1F63214600115225 /* LaunchScreen.storyboard */; };
 		7C3A6D181F633B6900115225 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D171F633B6900115225 /* Buttons.swift */; };
+		7C3A6D1B1F63442900115225 /* AuthSecurityImage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D191F63442900115225 /* AuthSecurityImage+CoreDataClass.swift */; };
+		7C3A6D1C1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D1A1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift */; };
+		7C3A6D1F1F63445800115225 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D1E1F63445800115225 /* CoreDataHelper.swift */; };
+		7C3A6D221F6344AC00115225 /* AuthSecurityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A6D211F6344AC00115225 /* AuthSecurityImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		7C3A6D0E1F63214600115225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C3A6D101F63214600115225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C3A6D171F633B6900115225 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		7C3A6D191F63442900115225 /* AuthSecurityImage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AuthSecurityImage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7C3A6D1A1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AuthSecurityImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7C3A6D1E1F63445800115225 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		7C3A6D211F6344AC00115225 /* AuthSecurityImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthSecurityImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,8 @@
 		7C3A6CF51F63214500115225 = {
 			isa = PBXGroup;
 			children = (
+				7C3A6D191F63442900115225 /* AuthSecurityImage+CoreDataClass.swift */,
+				7C3A6D1A1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift */,
 				7C3A6D001F63214600115225 /* StoringSnapshots */,
 				7C3A6CFF1F63214600115225 /* Products */,
 			);
@@ -56,6 +66,8 @@
 		7C3A6D001F63214600115225 /* StoringSnapshots */ = {
 			isa = PBXGroup;
 			children = (
+				7C3A6D201F63449200115225 /* Models */,
+				7C3A6D1D1F63444B00115225 /* Util */,
 				7C3A6D161F633B5B00115225 /* Views */,
 				7C3A6D011F63214600115225 /* AppDelegate.swift */,
 				7C3A6D031F63214600115225 /* ViewController.swift */,
@@ -73,6 +85,22 @@
 				7C3A6D171F633B6900115225 /* Buttons.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		7C3A6D1D1F63444B00115225 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A6D1E1F63445800115225 /* CoreDataHelper.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		7C3A6D201F63449200115225 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A6D211F6344AC00115225 /* AuthSecurityImage.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +176,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C3A6D041F63214600115225 /* ViewController.swift in Sources */,
+				7C3A6D1C1F63442900115225 /* AuthSecurityImage+CoreDataProperties.swift in Sources */,
 				7C3A6D0A1F63214600115225 /* StoringSnapshots.xcdatamodeld in Sources */,
+				7C3A6D1F1F63445800115225 /* CoreDataHelper.swift in Sources */,
 				7C3A6D021F63214600115225 /* AppDelegate.swift in Sources */,
 				7C3A6D181F633B6900115225 /* Buttons.swift in Sources */,
+				7C3A6D1B1F63442900115225 /* AuthSecurityImage+CoreDataClass.swift in Sources */,
+				7C3A6D221F6344AC00115225 /* AuthSecurityImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

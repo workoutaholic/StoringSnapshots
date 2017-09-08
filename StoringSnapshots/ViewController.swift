@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     func setUpCamera() {
         
-        self.captureDevice = AVCaptureDevice.defaultDevice(withDeviceType: AVCaptureDeviceType.builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front)
+        captureDevice = AVCaptureDevice.defaultDevice(withDeviceType: AVCaptureDeviceType.builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front)
         
         if(captureDevice != nil){
             
@@ -106,7 +106,6 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
         }
         
         captureSession.stopRunning()
-        
     }
 }
 
