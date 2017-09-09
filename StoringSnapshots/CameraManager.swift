@@ -59,7 +59,6 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
     
     func snapPhoto() {
         
-        
         guard let cameraAuthStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) as AVAuthorizationStatus?,
             cameraAuthStatus == .authorized else {
                 print("no camera access")
@@ -92,8 +91,11 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
         
         delegate.cameraDidTakePhoto(img: dataOfImage)
         
+        
+    }
+    
+    deinit {
         captureSession.stopRunning()
     }
     
-
 }

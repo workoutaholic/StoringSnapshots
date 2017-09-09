@@ -18,19 +18,16 @@ class CoreDataHelper: NSObject, PersistenceProtocol {
     
     static let sharedInstance = CoreDataHelper()
     
-    func appDelegate()->AppDelegate
-    {
+    func appDelegate()->AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    func managedObjectContext() -> NSManagedObjectContext
-    {
+    func managedObjectContext() -> NSManagedObjectContext {
         return self.appDelegate().persistentContainer.viewContext
     }
     
-    
-    func fetchSecurityImages() -> [AuthSecurityImage]
-    {
+    func fetchSecurityImages() -> [AuthSecurityImage] {
+        
         let request = AuthSecurityImage.fetchRequest() as NSFetchRequest
         
         let moc = self.managedObjectContext()

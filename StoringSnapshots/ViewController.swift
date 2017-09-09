@@ -9,14 +9,13 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, CameraManagerDelegate {
+class ViewController: UIViewController {
     
-    var photoMgr: CameraManager!
+    lazy var photoMgr: CameraManager = CameraManager(delegate: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photoMgr = CameraManager(delegate: self)
         photoMgr.setUpCamera()
         
         let btn = BaseBtn(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
@@ -28,21 +27,29 @@ class ViewController: UIViewController, CameraManagerDelegate {
         btn.center = btn.superview!.center
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func takePhotosPressed(_ sender: UIButton) {
         
-        photoMgr.snapPhoto()
+        
+        
+        for i in 0..<10 {
+            
+            let time = DispatchTime.now() + (Double(i) * 0.5)
+            DispatchQueue.main.asyncAfter(deadline: time, execute: { [weak self] in
+                    self?.photoMgr.snapPhoto()
+            })
+        }
+        
     }
+    
+}
+
+extension ViewController: CameraManagerDelegate {
     
     func cameraDidTakePhoto(img: UIImage) {
         
         //storing to library at the moment while determining encryption scheme
         UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
     }
-
 
 }
