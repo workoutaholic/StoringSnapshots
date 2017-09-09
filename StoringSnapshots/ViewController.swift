@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Photos
+import Security
 
 class ViewController: UIViewController {
     
@@ -26,11 +26,12 @@ class ViewController: UIViewController {
         self.view.addSubview(btn)
         btn.center = btn.superview!.center
         
+        let images = CoreDataHelper.sharedInstance.fetchSecurityImages()
+        print(images.count)
+        
     }
     
     func takePhotosPressed(_ sender: UIButton) {
-        
-        
         
         for i in 0..<10 {
             
@@ -39,17 +40,18 @@ class ViewController: UIViewController {
                     self?.photoMgr.snapPhoto()
             })
         }
-        
     }
-    
 }
 
 extension ViewController: CameraManagerDelegate {
     
-    func cameraDidTakePhoto(img: UIImage) {
+    func cameraDidTakePhoto(img: NSData) {
+        
+        
+        let authImg = AuthSecurityImage(imgData: img)
+        authImg.save()
         
         //storing to library at the moment while determining encryption scheme
-        UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+        //UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
     }
-
 }
