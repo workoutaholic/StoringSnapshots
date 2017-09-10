@@ -1,13 +1,15 @@
-Taking snapshots and storing them securely on a device...in theory.
+Taking snapshots and storing them securely on a device.
 
 To run you should be able to clone and run on any iOS device with a front facing camera.
 
-When the "Take Photos" button is clicked the front facing camera will take 10 photos with a delay of 0.5 seconds between shots.  The images are then persisted in Core Data right now.
+When the "Take Photos" button is clicked the PhotoManager uses the front facing camera to take 10 photos with a delay of 0.5 seconds between shots.
+
+As each image is taken the CameraManagerDelegate (the ViewController) gets back an image which it sends to the EncryptionManager which encrypts each image (Data) using the RNCryptor pod.  The password used to encrypt is stored in the iOS KeyChain.
+
+The ViewController then creates a new instance of AuthSecurityImage which saves the encrypted data leveraging Core Data.
 
 *** Further Considerations ***
 
- I am looking at how to store the images in a KeyChain directly where before I was thinking I could control access to them in Core Data but realize that DB isn't secure itself given that it could be backed up or copied and possibly accessed by other applications.
-
 User experience could be improved with additional handling of scenarios where the user does not grant access to use the camera.
 
-Understanding the process flow.  There will likely be a scenario where this process is kicked off to initialize the images associated with the user...which would be stored in the keychain.  After that I would assume this process would be kicked off again to re-authenticate but instead of storing the images (or in addition to storing them) it would also need to run a verification module.
+Right now the password for encrypting the photos is stored right in the EncryptionManager.  I would think the most secure way to handle this would be to get the password from a remote server (probably a good reason to look into iCloud keyChains :) but I haven't gotten there quite yet...

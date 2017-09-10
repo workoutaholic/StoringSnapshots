@@ -10,7 +10,7 @@ import Foundation
 import Photos
 
 protocol CameraManagerDelegate {
-    func cameraDidTakePhoto(img: NSData)
+    func cameraDidTakePhoto(img: Data)
 }
 
 class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
@@ -42,7 +42,6 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
                     do {
                         try self.captureSession.addInput(AVCaptureDeviceInput(device: self.captureDevice))
                     } catch {
-                        //self.showNoCameraAccess()
                         print("error adding AVCaptureDevice as Input to captureSession")
                     }
                     
@@ -84,13 +83,7 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
                 return
         }
         
-        /*guard let dataOfImage = UIImage(data: dataImage) as UIImage? else {
-            print("unable to convert to UIImage")
-            return
-        }*/
-        
-        delegate.cameraDidTakePhoto(img: dataImage as NSData)
-        
+        delegate.cameraDidTakePhoto(img: dataImage)
         
     }
     

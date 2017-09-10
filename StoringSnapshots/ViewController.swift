@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Security
 
 class ViewController: UIViewController {
     
@@ -26,8 +25,10 @@ class ViewController: UIViewController {
         self.view.addSubview(btn)
         btn.center = btn.superview!.center
         
+        //THIS BLOCK CAN BE REMOVED - JUST FOR ME TO VERIFY COUNT OF IMAGES SAVED
         let images = CoreDataHelper.sharedInstance.fetchSecurityImages()
         print(images.count)
+        /////////////////////////////////////////////////////////////////////////
         
     }
     
@@ -45,13 +46,14 @@ class ViewController: UIViewController {
 
 extension ViewController: CameraManagerDelegate {
     
-    func cameraDidTakePhoto(img: NSData) {
+    func cameraDidTakePhoto(img: Data) {
         
-        
-        let authImg = AuthSecurityImage(imgData: img)
-        authImg.save()
-        
-        //storing to library at the moment while determining encryption scheme
-        //UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+        do {
+            let encryptedImg = try EncryptionManager.sharedInstance.encryptPhoto(imgData: img)
+            let authImg = AuthSecurityImage(imgData: encryptedImg)
+            authImg.save()
+        } catch {
+            print("unable to save image")
+        }
     }
 }
